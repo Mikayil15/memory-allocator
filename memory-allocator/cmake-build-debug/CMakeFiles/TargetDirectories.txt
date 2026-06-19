@@ -1,0 +1,4 @@
+/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/cmake-build-debug/CMakeFiles/allocator.dir
+/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/cmake-build-debug/CMakeFiles/app.dir
+/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/cmake-build-debug/CMakeFiles/rebuild_cache.dir

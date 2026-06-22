@@ -16,6 +16,7 @@ MemoryAllocator::MemoryAllocator(size_t size)
 
 
 
+
     head->size = size - sizeof(BlockHeader);
 
     head->free = true;

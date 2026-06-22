@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/include -g -std=gnu++20 -arch arm64 -fcolor-diagnostics -o CMakeFiles/allocator.dir/src/MemoryAllocator.cpp.o -c /Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/src/MemoryAllocator.cpp",
+  "file": "/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/src/MemoryAllocator.cpp",
+  "output": "/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/cmake-build-debug/CMakeFiles/allocator.dir/src/MemoryAllocator.cpp.o"
+},
+{
+  "directory": "/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/include -g -std=gnu++20 -arch arm64 -fcolor-diagnostics -o CMakeFiles/allocator.dir/src/MemoryPool.cpp.o -c /Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/src/MemoryPool.cpp",
+  "file": "/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/src/MemoryPool.cpp",
+  "output": "/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/cmake-build-debug/CMakeFiles/allocator.dir/src/MemoryPool.cpp.o"
+},
+{
+  "directory": "/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/include -g -std=gnu++20 -arch arm64 -fcolor-diagnostics -o CMakeFiles/app.dir/app/main.cpp.o -c /Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/app/main.cpp",
+  "file": "/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/app/main.cpp",
+  "output": "/Users/zeynalabdinovmikayil/CLionProjects/memory-allocator/cmake-build-debug/CMakeFiles/app.dir/app/main.cpp.o"
+}
+]

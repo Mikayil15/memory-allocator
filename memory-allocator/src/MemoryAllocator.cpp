@@ -13,8 +13,6 @@ MemoryAllocator::MemoryAllocator(size_t size)
 {
     head = (BlockHeader*)pool.getMemory();
 
-
-
     head->size = size - sizeof(BlockHeader);
     head->free = true;
     head->next = nullptr;

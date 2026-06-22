@@ -10,20 +10,47 @@ int main()
     MemoryAllocator allocator(1024);
 
 
-    int* number =
-        (int*)allocator.allocate(sizeof(int));
+
+    int* a =
+        (int*)allocator.allocate(100);
 
 
-    *number = 100;
+
+    int* b =
+        (int*)allocator.allocate(200);
 
 
-    std::cout
-        << *number
-        << std::endl;
+
+    int* c =
+        (int*)allocator.allocate(50);
 
 
-    allocator.deallocate(number);
 
+    *a = 10;
+
+    *b = 20;
+
+    *c = 30;
+
+
+
+    std::cout << *a << std::endl;
+
+    std::cout << *b << std::endl;
+
+    std::cout << *c << std::endl;
+
+
+
+    allocator.printMemory();
+
+
+
+    allocator.deallocate(b);
+
+
+
+    std::cout << "\nAfter Free b\n";
 
     allocator.printMemory();
 

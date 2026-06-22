@@ -11,58 +11,161 @@
 MemoryAllocator::MemoryAllocator(size_t size)
     : pool(size)
 {
-    head = (BlockHeader*)pool.getMemory();
 
+    head = reinterpret_cast<BlockHeader*>(pool.getMemory());
 
 
     head->size = size - sizeof(BlockHeader);
+
     head->free = true;
+
     head->next = nullptr;
 }
 
+
+
 void* MemoryAllocator::allocate(size_t size)
 {
+
     BlockHeader* current = head;
 
-    while (current)
+
+    while(current != nullptr)
     {
-        if (current->free && current->size >= size)
+
+
+        if(current->free && current->size >= size)
         {
+
+
+            size_t remaining =
+                    current->size
+                    - size
+                    - sizeof(BlockHeader);
+
+
+
+            if(remaining > sizeof(BlockHeader))
+            {
+
+                BlockHeader* newBlock =
+                        reinterpret_cast<BlockHeader*>(
+                                reinterpret_cast<char*>(current)
+                                + sizeof(BlockHeader)
+                                + size
+                        );
+
+
+
+                newBlock->size = remaining;
+
+
+                newBlock->free = true;
+
+
+                newBlock->next = current->next;
+
+
+
+                // Update current block
+
+                current->next = newBlock;
+
+
+                current->size = size;
+
+            }
+
+
+
+
+
             current->free = false;
 
-            return (void*)((char*)current + sizeof(BlockHeader));
+
+
+
+
+            return reinterpret_cast<char*>(current)
+                    + sizeof(BlockHeader);
+
         }
 
+
         current = current->next;
+
     }
+
 
     return nullptr;
 }
 
 
+
+
+
 void MemoryAllocator::deallocate(void* ptr)
 {
-    if (!ptr) return;
+
+    if(ptr == nullptr)
+        return;
+
+
 
     BlockHeader* block =
-        (BlockHeader*)((char*)ptr - sizeof(BlockHeader));
+            reinterpret_cast<BlockHeader*>(
+                    reinterpret_cast<char*>(ptr)
+                    - sizeof(BlockHeader)
+            );
+
 
     block->free = true;
+
 }
+
+
+
+
 
 
 void MemoryAllocator::printMemory()
 {
+
     BlockHeader* current = head;
+
+
     int index = 0;
 
-    while (current)
+
+    while(current)
     {
-        std::cout << "Block " << index++ << "\n";
-        std::cout << "Size: " << current->size << "\n";
-        std::cout << "Free: " << current->free << "\n";
-        std::cout << "-------------------\n";
+
+        std::cout
+            << "Block "
+            << index++
+            << std::endl;
+
+
+        std::cout
+            << "Size: "
+            << current->size
+            << std::endl;
+
+
+        std::cout
+            << "Free: "
+            << current->free
+            << std::endl;
+
+
+        std::cout
+            << "-------------------"
+            << std::endl;
+
+
 
         current = current->next;
+
     }
+
 }

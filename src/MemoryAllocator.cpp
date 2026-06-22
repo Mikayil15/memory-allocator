@@ -15,6 +15,7 @@ MemoryAllocator::MemoryAllocator(size_t size)
     head = reinterpret_cast<BlockHeader*>(pool.getMemory());
 
 
+
     head->size = size - sizeof(BlockHeader);
 
     head->free = true;
